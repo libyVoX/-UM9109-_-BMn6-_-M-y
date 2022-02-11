@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.a{
+			display: flex;
+			margin-top: 50px;
+		}
+		.b{
+			background: blue;
+			height: 200px;
+			width: 300px;
+			margin-left: 115px;
+			transition: 1s;
+			position: absolute;
+		}
+		.box{
+			top: 180px;
+		}
+		.box2{
+			top: 180px;
+			left: 415px;
+		}
+		.box3{
+			top: 180px;
+			left: 825px;
+		}
+		.box4{
+			top: 450px;
+		}
+		.box5{
+			top: 450px;
+			left: 415px;
+		}
+		.box6{
+			top: 450px;
+			left: 825px;
+		}
+		.btn{
+			background: lime; 
+			border: none; 
+			font-family: Arial; 
+			width: 100px; 
+			border-radius: 15px; 
+			margin-left: 620px;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center; margin: 0px;">У тебя <span class="span">3</span> попытки</h1>
+	<button class="btn">
+		<h2>Скрыть</h2>
+	</button>
+	<h1 style="text-align: center; display: none;" class="where">Где спрятан олень?</h1>
+	<h1 style="text-align: center; display: none;" class="loose">Ты проиграл :(</h1>
+	<img src="win.jpg" style="display: none; margin-left: 470px;" class="win">
+	<div class="l">
+		<div class="a">
+			<img src="bear.jfif" class="b box">
+			<img src="wolf.jfif" class="b box2">
+			<img src="deer.jfif" class="b box3">
+		</div>
+		<div class="a">
+			<img src="fox.jfif" class="b box4">
+			<img src="not-a-neggr-bear.jfif" class="b box5">
+			<img src="tiger.jfif" class="b box6">
+		</div>
+	</div>
+	<script type="text/javascript">
+		let attempts = 3
+		document.querySelector(".btn").onclick = function(){
+			document.querySelector(".box").style.filter = "brightness(0%)"
+			document.querySelector(".box2").style.filter = "brightness(0%)"
+			document.querySelector(".box3").style.filter = "brightness(0%)"
+			document.querySelector(".box4").style.filter = "brightness(0%)"
+			document.querySelector(".box5").style.filter = "brightness(0%)"
+			document.querySelector(".box6").style.filter = "brightness(0%)"
+			document.querySelector(".box").style.top = "450px"
+			document.querySelector(".box").style.left = "420px"
+			document.querySelector(".box3").style.left = "0px"
+			document.querySelector(".box4").style.top = "180px"
+			document.querySelector(".box4").style.left = "825px"
+			document.querySelector(".box5").style.top = "450px"
+			document.querySelector(".box5").style.left = "825px"
+			document.querySelector(".box6").style.left = "0px"
+			document.querySelector(".where").style.display = ""
+			document.querySelector(".box").onclick = function(){
+				attempts = attempts - 1
+				document.querySelector(".span").innerHTML = attempts
+				document.querySelector(".box").style.filter = "brightness(100%)"
+				alert("Попробуй ещё раз")
+				if(attempts == 0){
+					document.querySelector(".l").style.display = "none"
+					document.querySelector(".loose").style.display = ""
+					document.querySelector(".where").style.display = "none"
+				}
+			}
+			document.querySelector(".box2").onclick = function(){
+				attempts = attempts - 1
+				document.querySelector(".span").innerHTML = attempts
+				document.querySelector(".box2").style.filter = "brightness(100%)"
+				alert("Попробуй ещё раз")
+				if(attempts == 0){
+					document.querySelector(".l").style.display = "none"
+					document.querySelector(".loose").style.display = ""
+					document.querySelector(".where").style.display = "none"
+				}
+			}
+			document.querySelector(".box3").onclick = function(){
+				alert("Ты нашёл, молодец")
+				document.querySelector(".l").style.display = "none"
+				document.querySelector(".win").style.display = ""
+			}
+			document.querySelector(".box4").onclick = function(){
+				attempts = attempts - 1
+				document.querySelector(".span").innerHTML = attempts
+				document.querySelector(".box4").style.filter = "brightness(100%)"
+				alert("Попробуй ещё раз")
+				if(attempts == 0){
+					document.querySelector(".l").style.display = "none"
+					document.querySelector(".loose").style.display = ""
+					document.querySelector(".where").style.display = "none"
+				}
+			}
+			document.querySelector(".box5").onclick = function(){
+				attempts = attempts - 1
+				document.querySelector(".span").innerHTML = attempts
+				document.querySelector(".box5").style.filter = "brightness(100%)"
+				alert("Попробуй ещё раз")
+				if(attempts == 0){
+					document.querySelector(".l").style.display = "none"
+					document.querySelector(".loose").style.display = ""
+					document.querySelector(".where").style.display = "none"
+				}
+			}
+			document.querySelector(".box6").onclick = function(){
+				attempts = attempts - 1
+				document.querySelector(".span").innerHTML = attempts
+				document.querySelector(".box6").style.filter = "brightness(100%)"
+				alert("Попробуй ещё раз")
+				if(attempts == 0){
+					document.querySelector(".l").style.display = "none"
+					document.querySelector(".loose").style.display = ""
+					document.querySelector(".where").style.display = "none"
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>
